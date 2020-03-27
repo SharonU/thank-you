@@ -1,6 +1,14 @@
-import Login from "../components/Login"
-import Main from "../components/Main"
-import AppLayout from "../components/AppLayout"
+const Login = () =>
+    import ('../components/Login');
+const Main = () =>
+    import ('../components/Main');
+const AppLayout = () =>
+    import ("../components/AppLayout");
+
+const Offers = () =>
+    import ("../components/Offers");
+
+
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -18,9 +26,14 @@ const router = new VueRouter({
             path: '/',
             component: AppLayout,
             children: [{
-                component: Main,
-                path: '/main'
-            }]
+                    component: Main,
+                    path: '/main'
+                },
+                {
+                    component: Offers,
+                    path: '/offers'
+                }
+            ]
         }
     ]
 })
